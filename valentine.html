@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine</title>
+    <style>
+        body {
+            background-color: rosybrown;
+            color: rosybrown;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+        }
+
+        .geheel {
+            display: block;
+            background-color: white;
+            border-radius: 12px;
+            padding: 32px 24px 24px 24px;
+            margin: 25px;
+        }
+
+        .aanvraag img {
+            background-color: white;
+            border-radius: 12px;
+            padding: 4px;
+            /* Verwijder rand als die er is */
+            border: none;
+        }
+
+        #yes {
+            background-color: rgb(238, 13, 118);
+            border-radius: 12px;
+            color: white;
+            border: none;
+            padding: 7px 18px;
+        }
+
+        .button-row {
+            margin-top: 15px;
+        }
+
+        #no {
+            background-color: #efefef;
+            border-radius: 12px;
+            color: black;
+            border: none;
+            padding: 7px 18px;
+        }
+
+        .button-row {
+            margin-top: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="geheel">
+        <h1>Mijn baby</h1>
+        <div class="aanvraag">
+            <img src="images/source.gif" width="120px" height="100px">
+            <h3>Salimatou would you be my valentine?</h3>
+            <div class="button-row">
+                <button id="yes" type="button">YES</button>
+                <button id="no" type="button">NO</button>
+            </div>
+            <div id="no-message" style="margin-top:10px;color:rosybrown;font-weight:bold;"></div>
+        </div>
+    </div>
+    </div>
+</body>
+<script>
+    const noBtn = document.getElementById("no");
+    const yesBtn = document.getElementById("yes");
+    const noMessage = document.getElementById("no-message");
+    let yesBtnScale = 1;
+
+    noBtn.addEventListener("click", function () {
+        noMessage.textContent = "Zeg ja!! Bête type.";
+        yesBtnScale += 0.2;
+        yesBtn.style.transform = `scale(${yesBtnScale})`;
+    });
+
+    yesBtn.addEventListener("click", function () {
+            // Verwijder alles uit body
+            document.body.innerHTML = `
+                <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100vh;background:white;">
+                    <h1 style="font-size:3em;color:rgb(238,13,118);margin-bottom:30px;">Yay! 💖</h1>
+                    <video src="images/Projet vidéo.mp4" width="400" height="300" preload controls loop></video>
+                </div>
+            `;
+    });
+</script>
+
+</html>
